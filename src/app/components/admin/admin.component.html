@@ -1,0 +1,107 @@
+<!-- <div class="admin-container">
+    <h2>Admin Page</h2>
+    
+    <div class="product-form">
+      <h3>Add New Product</h3>
+      <form (ngSubmit)="addProduct()">
+        <input type="text" [(ngModel)]="newProduct.name" name="name" placeholder="Name" required>
+        <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="Price" required>
+        <input type="text" [(ngModel)]="newProduct.img" name="img" placeholder="Image URL" required>
+        <input type="number" [(ngModel)]="newProduct.quantity" name="quantity" placeholder="Quantity" required>
+        <textarea [(ngModel)]="newProduct.description" name="description" placeholder="Description"></textarea>
+        <textarea [(ngModel)]="newProduct.note" name="note" placeholder="Note"></textarea>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  
+    <div class="product-list">
+      <h3>Product List</h3>
+      <ul>
+        <li *ngFor="let product of products">
+          <div>
+            <img [src]="product.img" alt="{{ product.name }}">
+            <h4>{{ product.name }}</h4>
+            <p>{{ product.description }}</p>
+            <p>Price: {{ product.price }}</p>
+            <p>Quantity: {{ product.quantity }}</p>
+            <button (click)="updateProduct(product)">Update</button>
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+   -->
+   <div class="admin-container">
+    <h1>Quản trị sản phẩm</h1>
+    <div class="form-container">
+      <h2>Thêm sản phẩm mới</h2>
+      <form (ngSubmit)="addProduct()">
+        <div class="form-group">
+          <label for="name">Tên sản phẩm:</label>
+          <input type="text" id="name" [(ngModel)]="newProduct.name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="price">Giá:</label>
+          <input type="number" id="price" [(ngModel)]="newProduct.price" name="price" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="img">Hình ảnh URL:</label>
+          <input type="text" id="img" [(ngModel)]="newProduct.img" name="img" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="quantity">Số lượng:</label>
+          <input type="number" id="quantity" [(ngModel)]="newProduct.quantity" name="quantity" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Mô tả:</label>
+          <textarea id="description" [(ngModel)]="newProduct.description" name="description" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="note">Ghi chú:</label>
+          <textarea id="note" [(ngModel)]="newProduct.note" name="note"></textarea>
+        </div>
+        
+        <button type="submit">Thêm sản phẩm</button>
+      </form>
+    </div>
+    
+    <div class="product-list">
+      <h2>Danh sách sản phẩm</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Hình ảnh</th>
+            <th>Số lượng</th>
+            <th>Mô tả</th>
+            <th>Ghi chú</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }} VND</td>
+            <td><img [src]="product.img" alt="{{ product.name }}" class="product-img"></td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.note }}</td>
+            <td>
+              <button (click)="updateProduct(product)">Sửa</button>
+              <button (click)="deleteProduct(product.id)">Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

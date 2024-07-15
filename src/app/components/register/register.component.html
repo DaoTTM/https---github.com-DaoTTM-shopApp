@@ -1,0 +1,81 @@
+<!-- <div class="login-container">
+  <div class="login-box">
+    <h2 class="title">Register</h2>
+    <form (ngSubmit)="onRegister()">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="fullname" placeholder="Fullname" name="fullname" required>
+      </div>
+      <div class="input-group">
+        <input type="text" [(ngModel)]="username"placeholder="Username" name="username" required>
+      </div>
+      <div class="input-group">
+        <input type="password" [(ngModel)]="password"placeholder="Password" name="password" required>
+
+      </div>
+      <div class="input-group">
+        <input type="password" [(ngModel)]="confirmPassword"placeholder="confirmPassword" name="confirmPassword" required>
+
+      </div>
+      <div class="input-group">
+        <input type="email" [(ngModel)]="email"placeholder="Email" name="email" required>
+
+      </div>
+      <div class="input-group">
+        <input type="tel" [(ngModel)]="phone" placeholder="phone"name="phone" required>
+ 
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+    <p class="mess">Already have an account? <a class="link" routerLink="/login">Login here</a></p>
+
+  </div>
+
+</div> -->
+<div class="container">
+    <div class="left">
+
+    </div>
+    <div class="right">
+        <div class="register-box">
+            <h1> Cosmetics</h1>
+            <h2>Create your account</h2>
+            <form (ngSubmit)="register()">
+                <div class="form-columns">
+                    <div class="column">
+                        <div class="textbox">
+                            <input type="text" [ (ngModel)]="fullname" placeholder="Full name" name="fullname" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="text" [ (ngModel)]="username" placeholder="Username" name="username" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="email" [ (ngModel)]="email" placeholder="Email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="textbox">
+                            <input type="tel" [ (ngModel)]="phone" placeholder="phone" name="phone" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" [ (ngModel)]="passWord" placeholder="Password" name="password"
+                                required>
+                        </div>
+                        <!-- <div class="textbox">
+                <input type="password" [(ngModel)]="confirmPassword" placeholder="confirmPassword" name="confirmPassword"
+                  required>
+              </div> -->
+                        <div class="textbox">
+                            <button type="submit" class=btn>Register</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="login-link">
+                    <p>Already have an account? <a class="link" routerLink="/login">Login here</a></p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
